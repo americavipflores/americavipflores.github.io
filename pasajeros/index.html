@@ -364,6 +364,18 @@ footer .wa-contacto b{font-size:1.25rem;letter-spacing:.04em;color:#fff}
 @media (prefers-reduced-motion:reduce){footer .wa-contacto{transition:none}}
 </style>
 
+<style id="entretenimiento-costo-extra">
+.ent-extra-tag{display:inline-block;white-space:nowrap;margin-left:10px;padding:3px 10px;border-radius:999px;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#1a1200;background:linear-gradient(135deg,#fff3c9,#e8c25a 55%,#c9982e);box-shadow:0 0 14px rgba(232,194,90,.55);vertical-align:middle}
+.ent-aviso{display:flex;align-items:center;gap:14px;margin:18px 0 6px;padding:16px 18px;border-radius:16px;border:1.5px solid rgba(232,194,90,.85);background:linear-gradient(135deg,rgba(232,194,90,.20),rgba(10,26,68,.55));box-shadow:0 0 22px rgba(232,194,90,.30),inset 0 0 18px rgba(232,194,90,.08);animation:entAviso 2.6s ease-in-out infinite}
+.ent-aviso-ico{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;font-weight:900;font-size:1.3rem;color:#1a1200;background:linear-gradient(135deg,#fff3c9,#e8c25a 60%,#c9982e)}
+.ent-aviso b{display:block;color:#f6ead0;font-size:1.08rem;letter-spacing:.02em}
+.ent-aviso div span{display:block;color:#fff;font-size:.93rem;line-height:1.5;margin-top:2px}
+.ent-aviso a{white-space:nowrap;color:#f6d77e;font-weight:700;text-decoration:underline}
+.ent-offer-extra{display:inline-block!important;margin-bottom:10px;padding:4px 12px;border-radius:999px;font-size:.74rem!important;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:#1a1200!important;background:linear-gradient(135deg,#fff3c9,#e8c25a 55%,#c9982e);box-shadow:0 0 14px rgba(232,194,90,.5)}
+.ent-unused{font-style:normal;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;padding:2px 8px;border-radius:999px;background:#e8c25a;color:#1a1200;margin-left:4px}
+@keyframes entAviso{50%{box-shadow:0 0 34px rgba(232,194,90,.55),inset 0 0 18px rgba(232,194,90,.12)}}
+@media (prefers-reduced-motion:reduce){.ent-aviso{animation:none}}
+</style>
 <style id="entretenimiento-a-bordo">
 .ent-lead{max-width:60ch}
 .ent-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:22px}
@@ -540,9 +552,13 @@ footer .wa-contacto b{font-size:1.25rem;letter-spacing:.04em;color:#fff}
 <!-- Entretenimiento a bordo -->
 <section class="sec ent" id="entretenimiento">
   <div class="wrap">
-    <p class="eyebrow">Entretenimiento a bordo</p>
+    <p class="eyebrow">Entretenimiento a bordo <span class="ent-extra-tag">Costo extra</span></p>
     <h2>Sus series y películas, <span class="gold">todo el viaje</span>.</h2>
     <p class="muted ent-lead">Con el WiFi AMERICA VIP el viaje se pasa volando: vea sus plataformas de streaming favoritas, escuche su música y siga sus partidos desde sus apps oficiales.</p>
+    <div class="ent-aviso" role="note">
+      <span class="ent-aviso-ico" aria-hidden="true">$</span>
+      <div><b>El entretenimiento a bordo tiene un costo extra</b><span>No está incluido en la ficha de WiFi. Consulte precios y planes por WhatsApp al <a href="https://wa.me/593982233218?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20entretenimiento%20a%20bordo%20de%20AMERICA%20VIP" target="_blank" rel="noopener">0982 233 218</a>.</span></div>
+    </div>
     <figure class="ent-screen">
       <div class="ent-tv">
         <div class="ent-bar"><i></i><i></i><i></i><span>WiFi AMERICA VIP · En línea</span></div>
@@ -562,7 +578,7 @@ footer .wa-contacto b{font-size:1.25rem;letter-spacing:.04em;color:#fff}
       <div class="panel ent-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg><b>Videos y redes</b><span>Videos cortos, reels y sus redes durante la ruta.</span></div>
     </div>
     <div class="panel ent-offer">
-      <div><small>Recomendado para ver películas</small><b>Ficha de 10 horas <span class="gold">$2</span> · 1 día <span class="gold">$3</span></b><span class="small">Para videos más fluidos, elija calidad media en su app; la conexión se comparte con otros pasajeros.</span></div>
+      <div><span class="ent-offer-extra">Entretenimiento: costo extra, no incluido en la ficha</span><small>Recomendado para ver películas</small><b>Ficha de 10 horas <span class="gold">$2</span> · 1 día <span class="gold">$3</span></b><span class="small">Para videos más fluidos, elija calidad media en su app; la conexión se comparte con otros pasajeros.</span></div>
       <a class="btn ent-btn" href="https://wa.me/593982233218?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20entretenimiento%20a%20bordo%20de%20AMERICA%20VIP" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Quiero entretenimiento a bordo</a>
     </div>
   </div>
