@@ -1,0 +1,39 @@
+{
+  "segundos": 15,
+  "provincias": [
+    {"nombre": "Carchi", "ciudades": ["Tulcán"]},
+    {"nombre": "Imbabura", "ciudades": ["Ibarra", "Otavalo"]},
+    {"nombre": "Pichincha", "ciudades": ["Quito", "Sangolquí"]},
+    {"nombre": "Santo Domingo", "ciudades": ["Santo Domingo"]},
+    {"nombre": "Esmeraldas", "ciudades": ["Esmeraldas", "Atacames"]},
+    {"nombre": "Manabí", "ciudades": ["Manta", "Portoviejo"]},
+    {"nombre": "Los Ríos", "ciudades": ["Babahoyo", "Quevedo"]},
+    {"nombre": "Guayas", "ciudades": ["Guayaquil", "Milagro", "Naranjal"]},
+    {"nombre": "Azuay", "ciudades": ["Ponce Enríquez"]},
+    {"nombre": "El Oro", "ciudades": ["Machala", "Pasaje", "Santa Rosa", "El Guabo", "Arenillas", "Huaquillas"]},
+    {"nombre": "Tungurahua", "ciudades": ["Ambato"]},
+    {"nombre": "Chimborazo", "ciudades": ["Riobamba"]}
+  ],
+  "anuncios": [
+    {
+      "id": "vip",
+      "activo": true,
+      "destino": "todos",
+      "nombre": "WiFi VIP América VIP",
+      "texto": "Google sin límites · TikTok, Facebook, YouTube, Instagram, WhatsApp y muchas redes más · Películas, series, videos, música y más · Desde $1",
+      "video": "videos/anuncio_vip.mp4",
+      "whatsapp": "",
+      "telefono": ""
+    },
+    {
+      "id": "ejemplo-hotel",
+      "activo": false,
+      "destino": "Machala",
+      "nombre": "Hotel Ejemplo Machala",
+      "texto": "Habitaciones desde $25 la noche · Desayuno incluido",
+      "video": "videos/hotel_ejemplo.mp4",
+      "whatsapp": "593990000000",
+      "telefono": "0990000000"
+    }
+  ]
+}
