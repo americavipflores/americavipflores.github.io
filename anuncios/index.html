@@ -21,7 +21,7 @@
   .op { display:block; width:100%; padding:15px 10px; border-radius:16px; border:1.5px solid rgba(242,196,90,.45); background:linear-gradient(160deg,rgba(29,64,140,.75),rgba(10,26,66,.85)); color:#fff; font-size:17px; font-weight:800; text-align:center; cursor:pointer; box-shadow:0 6px 16px rgba(0,0,0,.25); opacity:0; transform:translateY(10px); animation:entrar .4s ease forwards; }
   .op:active { transform:scale(.97); background:var(--oro); color:var(--azul); }
   .op small { display:block; font-weight:500; color:var(--gris); font-size:12px; margin-top:4px; }
-  .lnk { display:block; text-align:center; color:var(--gris); margin-top:14px; font-size:14px; background:none; border:0; text-decoration:underline; width:100%; cursor:pointer; }
+  .lnk { display:block; text-align:center; color:#ffe48a; margin-top:16px; font-size:18px; font-weight:800; background:none; border:0; text-decoration:underline; width:100%; cursor:pointer; }
   .dest { display:flex; align-items:center; justify-content:center; gap:6px; color:var(--gris); font-size:14px; margin:6px 0 10px; }
   .dest b { color:#fff; }
   .video { position:relative; border-radius:20px; overflow:hidden; background:#000; aspect-ratio:9/16; max-height:56vh; margin:0 auto;
@@ -95,6 +95,8 @@
       <div class="ring"><svg viewBox="0 0 46 46"><circle class="f" cx="23" cy="23" r="20"/><circle class="b" id="arco" cx="23" cy="23" r="20" stroke-dashoffset="0"/></svg><span id="cuenta">15</span></div>
       <div class="barra" id="barra"></div>
     </div>
+    <button class="btn seguir" id="seguir" disabled><span class="fill" id="sfill"></span><span class="t" id="stxt">Continuar con WhatsApp gratis en 15 s</span></button>
+    <a class="btn vip" id="vip"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 18h18l-1.5-9-4.5 4-3-6-3 6-4.5-4z"/></svg><span>Pásate a VIP sin anuncios<br><small>Todo ilimitado desde $1</small></span></a>
     <div class="tarjeta aparece" id="tarj">
       <b id="a-nom"></b><span id="a-txt"></span>
       <div class="fila" id="a-bot">
@@ -103,8 +105,6 @@
       </div>
       <div class="num" id="a-num"></div>
     </div>
-    <button class="btn seguir" id="seguir" disabled><span class="fill" id="sfill"></span><span class="t" id="stxt">Continuar con WhatsApp gratis en 15 s</span></button>
-    <a class="btn vip" id="vip"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 18h18l-1.5-9-4.5 4-3-6-3 6-4.5-4z"/></svg><span>Pásate a VIP sin anuncios<br><small>Todo ilimitado desde $1</small></span></a>
     <button class="lnk" id="cambiar">Cambiar destino</button>
   </section>
 </main>
@@ -136,7 +136,7 @@
       var b = document.createElement('button'); b.className = 'op';
       b.innerHTML = p.nombre + '<small>' + p.ciudades.join(' · ') + '</small>';
       b.style.animationDelay = (g.children.length * 40) + 'ms';
-      b.onclick = function () { if (p.ciudades.length === 1) elegir(p.ciudades[0]); else pasoCiudad(p); };
+      b.onclick = function () { pasoCiudad(p); };
       g.appendChild(b);
     });
     ver('p-prov');
@@ -171,6 +171,7 @@
     $('a-txt').textContent = a.texto || '';
     var hayContacto = !!(a.whatsapp || a.telefono);
     $('a-bot').classList.toggle('oculto', !hayContacto);
+    $('tarj').classList.toggle('oculto', !hayContacto); // sin contacto (ej. promo VIP): no se muestra el cuadro
     $('a-num').classList.toggle('oculto', !hayContacto);
     if (a.whatsapp) {
       $('a-wa').classList.remove('oculto');
