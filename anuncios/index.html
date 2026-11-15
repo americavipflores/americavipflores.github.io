@@ -2,6 +2,9 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#071433">
 <title>WiFi gratis · AMÉRICA VIP</title>
@@ -116,6 +119,8 @@
   var base = vuelta.split('?')[0];
   var DIA = new Date().toISOString().slice(0, 10);
   var datos = null, segs = 15;
+  // solo=1: primera conexion del dia -> solo elige destino y entra, sin anuncio
+  var solo = qs.get('solo') === '1';
 
   function $(id) { return document.getElementById(id); }
   function ver(id) { ['p-prov', 'p-ciu', 'p-anu'].forEach(function (x) { $(x).classList.toggle('oculto', x !== id); }); window.scrollTo(0, 0); }
@@ -151,7 +156,7 @@
     });
     ver('p-ciu');
   }
-  function elegir(c) { guardar('avf_destino', c); guardar('avf_dia', DIA); evento('destino', c); anuncio(c); }
+  function elegir(c) { guardar('avf_destino', c); guardar('avf_dia', DIA); evento('destino', c); if (solo) { location.href = vuelta; return; } anuncio(c); }
 
   function anuncio(ciudad) {
     var prov = provDe(ciudad);
@@ -222,7 +227,7 @@
     datos = j; segs = j.segundos || 15;
     $('cuenta').textContent = segs;
     var d = leer('avf_destino');
-    if (d && leer('avf_dia') === DIA && provDe(d)) anuncio(d); else pasoProvincia();
+    if (d && leer('avf_dia') === DIA && provDe(d)) { if (solo) location.href = vuelta; else anuncio(d); } else pasoProvincia();
   }).catch(function () { location.href = vuelta; });
 })();
 </script>
